@@ -1,0 +1,33 @@
+services:
+  rasa:
+    build: .
+    container_name: rasa-bot
+    ports:
+      - "5005:5005"
+    volumes:
+      - .:/app           
+      - ./models:/app/models
+    command: >
+      run --enable-api --cors "*" --debug
+    depends_on:
+      - action_server
+  
+
+  action_server:
+    build:
+      context: .
+      dockerfile: Dockerfile.actions
+    container_name: rasa-actions
+    ports:
+      - "5055:5055"
+    volumes:
+      - ./actions:/app/actions
+    
+  rasa-train:
+      build: .
+      container_name: rasa-train
+      volumes:
+        - .:/app
+        - ./models:/app/models
+      entrypoint: ["rasa"]
+      command: ["train"]

@@ -1,0 +1,42 @@
+version: "3.1"
+intents:
+  - saudacao
+  - perguntar_servicos
+  - marcar_consulta
+  - fornecer_info
+  - despedida
+
+entities:
+  - nome
+
+slots:
+  nome:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: nome      
+
+responses:
+  utter_saudacao:
+  - text: "Olá! Eu sou o assistente virtual do Dr. Silva."
+
+  utter_servicos:
+  - text: "O Dr. Silva oferece terapia cognitivo-comportamental."
+
+  utter_ask_nome:
+  - text: "Para agendar, qual seu nome?"
+
+  utter_confirmar_agendamento:
+  - text: "Perfeito {nome}! Sua consulta foi agendada."
+
+  utter_despedida:
+  - text: "Até mais {nome}!"
+
+forms:
+  agendamento_form:
+    required_slots:
+      - nome
+
+actions:
+  - action_agendar_consulta

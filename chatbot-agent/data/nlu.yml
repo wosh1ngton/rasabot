@@ -1,0 +1,35 @@
+version: "3.1"
+nlu:
+- intent: saudacao
+  examples: |
+    - oi
+    - olá
+    - bom dia
+
+- intent: perguntar_servicos
+  examples: |
+    - quais serviços?
+    - o que vocês oferecem?
+    - que tipo de terapia?
+
+- intent: marcar_consulta
+  examples: |
+    - quero marcar consulta
+    - agendar horário
+    - marcar sessão
+
+- intent: fornecer_info
+  examples: |
+    - me chamo [José](nome)
+    - meu nome é [Maria](nome)
+    - [Carlos](nome)
+    - [Ana](nome) aqui
+    - pode me chamar de [Pedro](nome)
+    - sou a [Juliana](nome)
+    - [Roberto](nome)
+    - [Fernanda](nome)
+    - sou [José da Silva](nome)
+    - pode me chamar de [Maria Souza](nome)
+    - [João Pedro](nome)
+    - meu nome é [André](nome)
+    - aqui é a [Camila Rocha](nome)

@@ -1,0 +1,24 @@
+version: "3.1"
+rules:
+- rule: Saudação
+  steps:
+  - intent: saudacao
+  - action: utter_saudacao
+
+- rule: Ativar formulário de agendamento
+  steps:
+  - intent: marcar_consulta
+  - action: agendamento_form
+  - active_loop: agendamento_form
+
+- rule: Encerrar formulário de agendamento
+  condition:
+    - active_loop: agendamento_form
+  steps:
+    - action: agendamento_form
+    - active_loop: null
+    - slot_was_set:
+        - requested_slot: null
+    - action: utter_confirmar_agendamento
+
+
