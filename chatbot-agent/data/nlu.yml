@@ -5,19 +5,19 @@ nlu:
     - oi
     - olá
     - bom dia
-
 - intent: perguntar_servicos
   examples: |
     - quais serviços?
     - o que vocês oferecem?
     - que tipo de terapia?
-
+    - qual serviço?
+    - presencial
 - intent: marcar_consulta
   examples: |
     - quero marcar consulta
     - agendar horário
     - marcar sessão
-
+    - quero marcar
 - intent: fornecer_info
   examples: |
     - me chamo [José](nome)
@@ -33,3 +33,33 @@ nlu:
     - [João Pedro](nome)
     - meu nome é [André](nome)
     - aqui é a [Camila Rocha](nome)
+    - [segunda-feira](data)
+    - [amanhã](data)
+    - dia [15](data)
+    - [20/10](data)
+    - [próxima sexta](data)
+    - [quinta-feira](data)
+    - às [14:00](hora)
+    - [10 horas](hora)
+    - [9h](hora)
+    - [15:30](hora)
+    - [2 da tarde](hora)
+    - [11 da manhã](hora)
+    - me chamo [Roberto](nome) na [terça](data) às [16:00](hora)
+    - [Fernanda](nome) no dia [22](data) as [10h](hora)
+    - me chamo [João](nome)
+    - dia [21/10/2025](data)
+    - às [15h30](hora)
+    - [presencial](modalidade)
+    - [online](modalidade)
+    - à distância [online] (modalidade)
+    - me chamo [Gabriel](nome)
+    - dia [21/10/2025](data)
+    - às [15h50](hora)
+- intent: despedida
+  examples: |
+    - tchau
+    - até logo
+    - obrigado
+    - valeu
+    - falou

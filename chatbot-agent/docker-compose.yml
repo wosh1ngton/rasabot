@@ -23,11 +23,11 @@ services:
     volumes:
       - ./actions:/app/actions
     
-  rasa-train:
-      build: .
-      container_name: rasa-train
-      volumes:
-        - .:/app
-        - ./models:/app/models
-      entrypoint: ["rasa"]
-      command: ["train"]
+  # rasa-train:
+  #     build: .
+  #     container_name: rasa-train
+  #     volumes:
+  #       - .:/app
+  #       - ./models:/app/models
+  #     entrypoint: ["rasa"]
+  #     command: ["train"]

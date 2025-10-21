@@ -1,42 +1,68 @@
-version: "3.1"
+version: '3.1'
 intents:
-  - saudacao
-  - perguntar_servicos
-  - marcar_consulta
-  - fornecer_info
-  - despedida
-
+- despedida
+- fornecer_info
+- marcar_consulta
+- perguntar_servicos
+- saudacao
 entities:
-  - nome
-
+- hora
+- nome
+- data
+- modalidade
 slots:
   nome:
     type: text
     influence_conversation: true
     mappings:
     - type: from_entity
-      entity: nome      
-
+      entity: nome
+  data:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: data
+  hora:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: hora
+  modalidade:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: modalidade
 responses:
   utter_saudacao:
-  - text: "Olá! Eu sou o assistente virtual do Dr. Silva."
-
+  - text: Olá! Eu sou o assistente virtual do Dr. Silva.
   utter_servicos:
-  - text: "O Dr. Silva oferece terapia cognitivo-comportamental."
-
+  - text: O Dr. Silva oferece terapia cognitivo-comportamental.
   utter_ask_nome:
-  - text: "Para agendar, qual seu nome?"
-
+  - text: Para agendar, qual seu nome?
+  utter_ask_agendamento_form_data:
+  - text: Qual data você prefere?
+  utter_ask_agendamento_form_hora:
+  - text: Qual horário é melhor para você?
+  utter_ask_agendamento_form_modalidade:
+  - text: Qual modalidade você prefere, online ou presencial?
   utter_confirmar_agendamento:
-  - text: "Perfeito {nome}! Sua consulta foi agendada."
-
+  - text: Perfeito {nome}! Sua consulta foi agendada.
   utter_despedida:
-  - text: "Até mais {nome}!"
-
+  - text: Até mais {nome}!
 forms:
   agendamento_form:
     required_slots:
-      - nome
-
+    - nome
+    - data
+    - hora
+    - modalidade
 actions:
-  - action_agendar_consulta
+- utter_servicos
+- utter_saudacao
+- action_agendar_consulta
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

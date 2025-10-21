@@ -5,6 +5,11 @@ rules:
   - intent: saudacao
   - action: utter_saudacao
 
+- rule: Serviço
+  steps:
+  - intent: perguntar_servicos
+  - action: utter_servicos
+
 - rule: Ativar formulário de agendamento
   steps:
   - intent: marcar_consulta
@@ -20,5 +25,11 @@ rules:
     - slot_was_set:
         - requested_slot: null
     - action: utter_confirmar_agendamento
+    - action: action_agendar_consulta
+
+- rule: Despedida
+  steps:
+  - intent: despedida
+  - action: utter_despedida
 
 

@@ -19,3 +19,76 @@
 
 
 
+
+- story: interactive_story_1
+  steps:
+  - intent: saudacao
+  - action: utter_saudacao
+  - intent: perguntar_servicos
+  - action: utter_servicos
+  - intent: marcar_consulta
+  - action: agendamento_form
+  - active_loop: agendamento_form
+  - slot_was_set:
+    - requested_slot: nome
+  - intent: fornecer_info
+    entities:
+    - nome: João
+  - slot_was_set:
+    - nome: João
+  - action: agendamento_form
+  - slot_was_set:
+    - requested_slot: data
+  - intent: fornecer_info
+    entities:
+    - data: 21/10/2025
+  - slot_was_set:
+    - data: 21/10/2025
+  - action: agendamento_form
+  - slot_was_set:
+    - requested_slot: hora
+  - intent: fornecer_info
+    entities:
+    - hora: 15h30
+  - slot_was_set:
+    - hora: 15h30
+  - action: agendamento_form
+  - slot_was_set:
+    - requested_slot: modalidade
+
+- story: interactive_story_1
+  steps:
+  - intent: saudacao
+  - action: utter_saudacao
+  - intent: perguntar_servicos
+  - action: utter_servicos
+  - intent: marcar_consulta
+  - action: agendamento_form
+  - active_loop: agendamento_form
+  - slot_was_set:
+    - requested_slot: nome
+  - intent: fornecer_info
+    entities:
+    - nome: Gabriel
+  - slot_was_set:
+    - nome: Gabriel
+  - action: agendamento_form
+  - slot_was_set:
+    - requested_slot: data
+  - intent: fornecer_info
+    entities:
+    - data: 21/10/2025
+  - slot_was_set:
+    - data: 21/10/2025
+  - action: agendamento_form
+  - slot_was_set:
+    - requested_slot: hora
+  - intent: fornecer_info
+    entities:
+    - hora: 15h50
+  - slot_was_set:
+    - hora: 15h50
+  - action: agendamento_form
+  - slot_was_set:
+    - requested_slot: modalidade
+  - intent: perguntar_servicos
