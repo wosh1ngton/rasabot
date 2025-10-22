@@ -1,9 +1,11 @@
-# version: "3.1"
-# stories:
-# - story: saudacao
-#   steps:
-#   - intent: saudacao
-#   - action: utter_saudacao  
+version: "3.1"
+stories:
+- story: Valores
+  steps:
+  - intent: fornecer_valores
+  - action: utter_fornecer_valores  
+
+
 
 # - story: servicos
 #   steps:
@@ -92,3 +94,8 @@
   - slot_was_set:
     - requested_slot: modalidade
   - intent: perguntar_servicos
+
+- story: interactive_story_2
+  steps:
+  - intent: fornecer_valores
+  - action: utter_fornecer_valores

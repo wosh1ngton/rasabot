@@ -18,6 +18,12 @@ nlu:
     - agendar horário
     - marcar sessão
     - quero marcar
+- intent: fornecer_valores
+  examples: |
+    - qual valor da consulta?
+    - quanto fica?
+    - quanto custa?
+    - qual valor da sessão?
 - intent: fornecer_info
   examples: |
     - me chamo [José](nome)
@@ -54,7 +60,6 @@ nlu:
     - [online](modalidade)
     - à distância [online] (modalidade)
     - me chamo [Gabriel](nome)
-    - dia [21/10/2025](data)
     - às [15h50](hora)
 - intent: despedida
   examples: |

@@ -2,6 +2,7 @@ version: '3.1'
 intents:
 - despedida
 - fornecer_info
+- fornecer_valores
 - marcar_consulta
 - perguntar_servicos
 - saudacao
@@ -40,6 +41,10 @@ responses:
   - text: Olá! Eu sou o assistente virtual do Dr. Silva.
   utter_servicos:
   - text: O Dr. Silva oferece terapia cognitivo-comportamental.
+  utter_fornecer_valores:
+  - text: |
+      O valor da sessão de Psicoterapia Individual é R$ 370,00. Se você optar por pagar em pacotes, concedo descontos a partir de 4 sessões. 
+      O pacote com 4 sessões fica em R$ 1.400,00 (nesse pacote cada sessão sai a R$: 350,00).
   utter_ask_nome:
   - text: Para agendar, qual seu nome?
   utter_ask_agendamento_form_data:
@@ -47,7 +52,8 @@ responses:
   utter_ask_agendamento_form_hora:
   - text: Qual horário é melhor para você?
   utter_ask_agendamento_form_modalidade:
-  - text: Qual modalidade você prefere, online ou presencial?
+  - text: | 
+      {nome}, você prefere que a primeira consulta seja presencial ou online?
   utter_confirmar_agendamento:
   - text: Perfeito {nome}! Sua consulta foi agendada.
   utter_despedida:
@@ -60,6 +66,7 @@ forms:
     - hora
     - modalidade
 actions:
+- utter_fornecer_valores
 - utter_servicos
 - utter_saudacao
 - action_agendar_consulta

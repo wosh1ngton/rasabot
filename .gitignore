@@ -28,3 +28,4 @@ build/
 dist/
 logs/
 *.log
+chatbot-agent/story_graph.dot
